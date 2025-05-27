@@ -6,10 +6,11 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { RouterModule } from '@angular/router';
 import { LayoutComponent } from './layout/layout.component';
 import { SharedModule } from '../shared/shared.module';
+import { InvertoryComponent } from './invertory/invertory.component';
 
 
 @NgModule({
-  declarations: [LayoutComponent, DashboardComponent],
+  declarations: [LayoutComponent, DashboardComponent, InvertoryComponent],
   imports: [
     CommonModule,
     UserRoutingModule, 

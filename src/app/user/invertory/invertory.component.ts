@@ -2,10 +2,8 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-invertory',
-  imports: [],
   templateUrl: './invertory.component.html',
-  styleUrl: './invertory.component.scss'
+  styleUrl: './invertory.component.scss',
+  standalone: false,
 })
-export class InvertoryComponent {
-
-}
+export class InvertoryComponent {}
