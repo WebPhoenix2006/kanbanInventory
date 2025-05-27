@@ -33,19 +33,31 @@
                 .link {
                     display: flex;
                     align-items: center;
-                    margin-bottom: 44px;
+                    padding: 22px 10px;
+                    margin-bottom: 15px;
+                    transition: 0.3s linear border;
+                    border-left: none;
 
                     a {
                         text-decoration: none;
                         color: #000;
                     }
-
                     span {
                         margin-right: 16px;
 
                         i {
                             color: #000;
                         }
+                    }
+                    &:hover {
+                        margin-right: 10px;
+                        border-left: 5px solid #174ee7;
+                        transition: 0.3s linear border;
+                    }
+                    &.active {
+                        margin-right: 10px;
+                        border-left: 5px solid #174ee7;
+                        transition: 0.3s linear border;
                     }
                 }
             }
