@@ -1,0 +1,98 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="logo-container">
+        <img src="assets/images/kanban_logo.png" alt="kanban-logo" />
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="login-container">
+        <div class="heading">
+          <img src="assets/images/kanban_logosmall.png" alt="kanban-logo" />
+          <h1>Create an account</h1>
+          <p>Start your 30-day free trial.</p>
+        </div>
+        <div class="form">
+          <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+            <label for="name"
+              >Username<span>*</span>
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Enter your username..."
+                formControlName="username"
+              />
+              <div
+                class="text-danger"
+                *ngIf="
+                  signupForm.get('username').touched &&
+                  signupForm.get('username').invalid
+                "
+              >
+                *Username is required
+              </div>
+            </label>
+            <label for="email"
+              >Email<span>*</span>
+              <input
+                type="email"
+                class="form-control"
+                placeholder="Enter your email..."
+                formControlName="email"
+              />
+              <div
+                class="text-danger"
+                *ngIf="
+                  signupForm.get('email')?.touched &&
+                  signupForm.get('email')?.invalid
+                "
+              >
+                <small *ngIf="signupForm.get('email')?.errors?.['required']"
+                  >*Email is required</small
+                >
+                <small *ngIf="signupForm.get('email')?.errors?.['required']">
+                  *Invalid Email format
+                </small>
+              </div>
+            </label>
+            <label for="email"
+              >Password<span>*</span>
+              <input
+                type="password"
+                class="form-control"
+                placeholder="Enter your password..."
+                formControlName="password"
+              />
+              <div
+                class="text-danger"
+                *ngIf="
+                  signupForm.get('password')?.touched &&
+                  signupForm.get('password')?.invalid
+                "
+              >
+                <small *ngIf="signupForm.get('password')?.errors?.['required']"
+                  >*Password is required</small
+                >
+                <small *ngIf="signupForm.get('password')?.errors?.['minLength']">Password must be at least 6 characters.</small>
+              </div>
+              <p>Must be at least 6 characters.</p>
+            </label>
+
+            <div class="submit">
+              <button class="btn btn-primary submit-btn">Get Started</button>
+              <button class="btn btn-outline-primary google-btn">
+                <div class="icon me-2">
+                  <img src="assets/images/google-icon.png" alt="social" />
+                </div>
+                Sign Up with Google
+              </button>
+            </div>
+            <p>
+              Already have an account? <a routerLink="/auth/login">Log In</a>
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

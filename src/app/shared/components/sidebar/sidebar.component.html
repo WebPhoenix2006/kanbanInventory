@@ -1,0 +1,45 @@
+  <div class="sidebar-par ">
+    <div class="logo shadow-bottom">
+      <img src="assets/images/logo-light.png" alt="logo" />
+    </div>
+    <div class="sidebar">
+      <div class="sidebar-nav">
+        <ul class="nav mb-5 flex-column">
+          <li class="link">
+            <span> <svg-icons name="home"></svg-icons> </span>
+            <a routerLink="/user/dashboard">Dashboard</a>
+          </li>
+          <li class="link">
+            <span> <svg-icons name="handcart"></svg-icons> </span>
+            <a routerLink="/user/dashboard">Inventory</a>
+          </li>
+          <li class="link">
+            <span> <svg-icons name="stats"></svg-icons> </span>
+            <a routerLink="/user/dashboard">Reports</a>
+          </li>
+          <li class="link">
+            <span> <svg-icons name="profile"></svg-icons> </span>
+            <a routerLink="/user/dashboard">Suppliers</a>
+          </li>
+          <li class="link">
+            <span> <svg-icons name="box"></svg-icons> </span>
+            <a routerLink="/user/dashboard">Orders</a>
+          </li>
+          <li class="link">
+            <span> <svg-icons name="notes"></svg-icons> </span>
+            <a routerLink="/user/dashboard">Manage Store</a>
+          </li>
+        </ul>
+        <ul class="nav flex-column">
+          <li class="link">
+            <span> <svg-icons name="cog"></svg-icons> </span>
+            <a routerLink="/">Settings</a>
+          </li>
+          <li class="link" >
+            <span> <svg-icons name="exit"></svg-icons> </span>
+            <a (click)="onLogout()" style="cursor: pointer;">Log out</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
