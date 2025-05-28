@@ -93,6 +93,7 @@ export class InvertoryComponent {
       availability: 'in stock',
     },
   ];
+  
   close() {
     if(this.showModal){
       this.showModal = false;
