@@ -5,22 +5,23 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { SvgIconsComponent } from './components/svg-icons/svg-icons.component';
 import { RouterModule } from '@angular/router';
 import { CustomScrollComponent } from './components/cus-scroll/cus-scroll.component';
-import { HttpClientModule } from '@angular/common/http';
+import { NavButtonsComponent } from './components/nav-buttons/nav-buttons.component';
 
 
 
 @NgModule({
-  declarations: [NavbarComponent, SidebarComponent, SvgIconsComponent, CustomScrollComponent],
+  declarations: [NavbarComponent, SidebarComponent, SvgIconsComponent, CustomScrollComponent, NavButtonsComponent],
   imports: [
     CommonModule,
     RouterModule,
-    HttpClientModule
+    
   ],
   exports: [
     NavbarComponent,
     SidebarComponent,
     CustomScrollComponent,
     SvgIconsComponent,
+    NavButtonsComponent
   ]
 })
 export class SharedModule { }

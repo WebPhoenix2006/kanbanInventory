@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 
 @Component({
   selector: 'app-invertory',
@@ -8,6 +8,8 @@ import { Component } from '@angular/core';
 })
 
 export class InvertoryComponent {
+
+  page = signal<string>('Page 1 of 10');
 
 products = [
   { name: 'Coca Cola', price: 450, quantity: '30 packets', category: '12 Packets',  date: '2025-08-10', availability: 'in stock' },
