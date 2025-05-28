@@ -82,38 +82,53 @@
 
   <!-- =========== BEGINNING OF TABLE COMPONENT ============= -->
 
-  <table class="table">
-    <thead>
-      <tr>
-        <td>Price</td>
-        <td>Price</td>
-        <td>Price</td>
-        <td>Price</td>
-        <td>Price</td>
-        <td>Price</td>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let item of products">
-        <td>{{ item.name }}</td>
-        <td>{{ item.price }}</td>
-        <td>{{ item.quantity }}</td>
-        <td>{{ item.category }}</td>
-        <td>{{ item.date }}</td>
-        <td
-          [ngClass]="
-            item.availability === 'out of stock'
-              ? 'red'
-              : item.availability === 'low stock'
-              ? 'orange'
-              : 'green'
-          "
-        >
-          {{ item.availability }}
-        </td>
-      </tr>
-    </tbody>
-  </table>
+  <div class="table">
+    <div class="table-header">
+      <h1>Products</h1>
+
+      <div class="btn-con">
+        <button class="btn-blue" (click)="showModal = true">Add product</button>
+        <button>
+          <span><i class="ri-filter-3-line"></i></span> Filters
+        </button>
+        <button>Download All</button>
+      </div>
+    </div>
+
+    <table class="table">
+      <thead>
+        <tr>
+          <td>Price</td>
+          <td>Price</td>
+          <td>Price</td>
+          <td>Price</td>
+          <td>Price</td>
+          <td>Price</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of products">
+          <td>{{ item.name }}</td>
+          <td>{{ item.price }}</td>
+          <td>{{ item.quantity }}</td>
+          <td>{{ item.category }}</td>
+          <td>{{ item.date }}</td>
+          <td
+            [ngClass]="
+              item.availability === 'out of stock'
+                ? 'red'
+                : item.availability === 'low stock'
+                ? 'orange'
+                : 'green'
+            "
+          >
+            {{ item.availability }}
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <app-nav-buttons [page]="page()" />
+  </div>
 </main>
 
 <app-modal [(isVisible)]="showModal" size="md">
