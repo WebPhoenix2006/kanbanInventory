@@ -98,7 +98,7 @@
     <h1>Products</h1>
 
     <div class="btn-con">
-      <button class="btn-blue">Add product</button>
+      <button class="btn-blue" (click)="showModal = true">Add product</button>
       <button><span><i class="ri-filter-3-line"></i></span> Filters</button>
       <button>Download All</button>
     </div>
@@ -163,3 +163,58 @@
  </div>
 
 </main>
+
+<app-modal [(isVisible)]="showModal" size="md">
+  <div class="add-product">
+    <div class="heading">
+      <h3>New Product</h3>
+    </div>
+    <form>
+      <div class="product-image">
+        <div class="left">
+
+        </div>
+        <div class="right">
+          <small>Drop image here</small>
+          <span>or</span>
+          <small><a routerLink="/">Browser image</a></small>
+        </div>
+      </div>
+      <div class="form-content">
+        <div class="form-group">
+          <label for="name" >Product Name</label>
+          <input type="text" class="form-control" placeholder="Enter product name">
+        </div>
+        <div class="form-group">
+          <label for="name" >Product ID</label>
+          <input type="text" class="form-control" placeholder="Enter product ID">
+        </div>
+        <div class="form-group">
+          <label for="name" >Buying Price</label>
+          <input type="text" class="form-control" placeholder="Enter buying price">
+        </div>
+        <div class="form-group">
+          <label for="name" >Quantity</label>
+          <input type="text" class="form-control" placeholder="Quantity">
+        </div>
+        <div class="form-group">
+          <label for="name" >Unit</label>
+          <input type="text" class="form-control" placeholder="Enter product unit">
+        </div>
+        <div class="form-group">
+          <label for="name" >Expiry Date</label>
+          <input type="text" class="form-control" placeholder="Enter expiry date">
+        </div>
+        <div class="form-group">
+          <label for="name" >Threshold Value</label>
+          <input type="text" class="form-control" placeholder="Enter threshold value">
+        </div>
+      </div>
+
+      <div class="actions mt-5 d-flex justify-content-end">
+        <button type="button" class="btn btn-outline-secondary me-2" (click)="close()">Discard</button>
+        <button type="button" class="btn btn-primary" (click)="close()">Add Product</button>
+      </div>
+    </form>
+  </div>
+</app-modal>

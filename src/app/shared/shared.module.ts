@@ -6,11 +6,12 @@ import { SvgIconsComponent } from './components/svg-icons/svg-icons.component';
 import { RouterModule } from '@angular/router';
 import { CustomScrollComponent } from './components/cus-scroll/cus-scroll.component';
 import { NavButtonsComponent } from './components/nav-buttons/nav-buttons.component';
+import { ModalComponent } from './components/modal/modal.component';
 
 
 
 @NgModule({
-  declarations: [NavbarComponent, SidebarComponent, SvgIconsComponent, CustomScrollComponent, NavButtonsComponent],
+  declarations: [NavbarComponent, SidebarComponent, SvgIconsComponent, CustomScrollComponent, NavButtonsComponent, ModalComponent],
   imports: [
     CommonModule,
     RouterModule,
@@ -21,7 +22,8 @@ import { NavButtonsComponent } from './components/nav-buttons/nav-buttons.compon
     SidebarComponent,
     CustomScrollComponent,
     SvgIconsComponent,
-    NavButtonsComponent
+    NavButtonsComponent, 
+    ModalComponent
   ]
 })
 export class SharedModule { }
