@@ -10,7 +10,7 @@ import { InvertoryComponent } from './invertory/invertory.component';
 
 
 @NgModule({
-  declarations: [LayoutComponent, DashboardComponent, InvertoryComponent],
+  declarations: [LayoutComponent, DashboardComponent, InvertoryComponent, ],
   imports: [
     CommonModule,
     UserRoutingModule, 

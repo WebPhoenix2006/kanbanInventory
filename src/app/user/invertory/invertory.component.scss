@@ -100,7 +100,7 @@ main {
 }
 
 .pink {
-  color: lighten($color: red, $amount: 10%);
+  color: red;
 }
 
 .table {
@@ -129,6 +129,12 @@ main {
         border-radius: 6px;
         padding: 5px 10px;
         cursor: pointer;
+        transition: .4s ease-in-out;
+
+        &:hover {
+          transform: scale(1.02);
+          box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
       }
 
       .btn-blue {
