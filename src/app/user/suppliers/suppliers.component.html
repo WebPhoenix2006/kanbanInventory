@@ -1,0 +1,50 @@
+<main>
+  <div class="suppliers-container">
+    <div class="heading">
+      <h1>Suppliers</h1>
+  
+      <div class="btn-con">
+        <button class="btn-blue">Add product</button>
+        <button>Filters</button>
+        <button>Download All</button>
+      </div>
+    </div>
+  
+    <!-- END OF HEADING -->
+  
+    <div class="content-container">
+      <table class="table">
+        <thead>
+          <tr>
+            <td>Supplier name</td>
+            <td>Product</td>
+            <td>Contact Number</td>
+            <td>Email</td>
+            <td>Type</td>
+            <td>On The Way</td>
+          </tr>
+        </thead>
+        <tbody>
+          @for (customer of customers; track $index) {
+            <tr>
+              <td>{{ customer.name }}</td>
+              <td>{{ customer.product }}</td>
+              <td>{{ customer.contactNumber }}</td>
+              <td>{{ customer.email }}</td>
+              <td
+              [ngClass]="customer.type === 'not taking return'
+              ? 'green'
+              : 'red'
+              ">
+              {{ customer.type }}
+            </td>
+              <td>{{ customer.onTheWay }}</td>
+            </tr>
+          }
+        </tbody>
+      </table>
+      <app-nav-buttons [page]="page()"/>
+    </div>
+  
+  </div>
+</main>

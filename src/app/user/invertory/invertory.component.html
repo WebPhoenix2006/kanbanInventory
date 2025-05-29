@@ -177,43 +177,170 @@
           />
         </div>
         <div class="form-group">
-          <label for="quantity">Quantity</label>
+
+      </div>
+
+      <!-- DIV THREE -->
+      <div class="div3 divs">
+        <div class="content-wrapper">
+          <div class="h1-div">
+            <h1 class="purple">Top selling</h1>
+          </div>
+
+          <div class="price-con">
+            <h2>5</h2>
+            <h2>2500</h2>
+          </div>
+
+          <div class="text-con">
+            <p>last seven days</p>
+            <p>cost</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- DIV FOUR -->
+      <div class="divs div4">
+        <div class="content-wrapper">
+          <div class="h1-div">
+            <h1 class="pink">Low stocks</h1>
+          </div>
+          <div class="price-con">
+            <h2>12</h2>
+            <h2>2</h2>
+          </div>
+          <div class="text-con">
+            <p>ordered</p>
+            <p>Not In Stock</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ====== END OF OVERALL INVENTORY ======== -->
+
+  <!-- =========== BEGINNING OF TABLE COMPONENT ============= -->
+
+    <div class="table">
+
+      <div class="table-header">
+
+        <h1>Products</h1>
+        <div class="btn-con">
+          <button class="btn-blue" (click)="showModal = true">Add product</button>
+          
+          <button>
+            <span><i class="ri-filter-3-line"></i></span> Filters
+          </button>
+
+          <button>Download All</button>
+        </div>
+      </div>
+
+
+      <table class="table-data">
+        <thead>
+          <tr>
+            <th>Product name</th>
+            <th>Buying price</th>
+            <th>Quantity</th>
+            <th>Threshold value</th>
+            <th>Expiry Date</th>
+            <th>Availability</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of products">
+            <td data-label="Product name">{{ item.name }}</td>
+            <td data-label="Price">₦{{ item.price }}</td>
+            <td data-label="Quantity">{{ item.quantity }}</td>
+            <td data-label="Category">{{ item.category }}</td>
+            <td data-label="Date">{{ item.date }}</td>
+            <td
+              [attr.data-label]="'Availability'"
+              [ngClass]="
+                item.availability === 'out of stock'
+                  ? 'red'
+                  : item.availability === 'low stock'
+                  ? 'orange'
+                  : 'green' ">
+              {{ item.availability }}
+            </td>
+
+          </tr>
+        </tbody>
+      </table>
+      <app-nav-buttons [page]="page()" />
+    </div>
+
+</main>
+
+<app-modal [(isVisible)]="showModal" size="md">
+  <div class="add-product">
+    <div class="heading">
+      <h3>New Product</h3>
+    </div>
+    <form>
+      <div class="product-image">
+        <div class="left"></div>
+        <div class="right">
+          <small>Drop image here</small>
+          <span>or</span>
+          <small><a routerLink="/">Browser image</a></small>
+        </div>
+      </div>
+      <div class="form-content">
+        <div class="form-group">
+          <label for="name">Product Name</label>
           <input
             type="text"
             class="form-control"
-            placeholder="Quantity"
-            [(ngModel)]="newProduct.quantity"
-            name="quantity"
+            placeholder="Enter product name"
           />
         </div>
         <div class="form-group">
-          <label for="unit">Unit</label>
+          <label for="name">Product ID</label>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Enter product ID"
+          />
+        </div>
+        <div class="form-group">
+          <label for="name">Buying Price</label>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Enter buying price"
+          />
+        </div>
+        <div class="form-group">
+          <label for="name">Quantity</label>
+          <input type="text" class="form-control" placeholder="Quantity" />
+        </div>
+        <div class="form-group">
+          <label for="name">Unit</label>
           <input
             type="text"
             class="form-control"
             placeholder="Enter product unit"
-            [(ngModel)]="newProduct.unit"
-            name="unit"
           />
         </div>
         <div class="form-group">
-          <label for="exp_date">Expiry Date</label>
+          <label for="name">Expiry Date</label>
           <input
             type="text"
             class="form-control"
             placeholder="Enter expiry date"
-            [(ngModel)]="newProduct.exp_date"
-            name="exp_date"
           />
         </div>
         <div class="form-group">
-          <label for="threshold">Threshold Value</label>
+          <label for="name">Threshold Value</label>
           <input
             type="text"
             class="form-control"
             placeholder="Enter threshold value"
-            [(ngModel)]="newProduct.threshold"
-            name="threshold"
           />
         </div>
       </div>
@@ -227,6 +354,7 @@
           Discard
         </button>
         <button type="submit" class="btn btn-primary">
+        <button type="button" class="btn btn-primary" (click)="close()">
           Add Product
         </button>
       </div>

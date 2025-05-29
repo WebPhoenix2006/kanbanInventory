@@ -50,4 +50,7 @@ export class InventoryComponent implements OnInit {
       error: (err) => console.error('Error adding product', err),
     });
   }
+
+  
+  
 }

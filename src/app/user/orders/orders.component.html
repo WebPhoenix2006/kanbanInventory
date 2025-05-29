@@ -1,0 +1,136 @@
+<main>
+ 
+  <div class="overall-inventory">
+    <div class="title">Overall Orders</div>
+
+    <div class="inventory-content">
+      <!-- DIV ONE -->
+      <div class="div1 divs">
+        <div class="content-wrapper">
+          <div class="h1-div">
+            <h1 class="blue">Total Orders</h1>
+          </div>
+
+          <div class="price-con">
+            <h2>40</h2>
+          </div>
+
+          <div class="text-con">
+            <p>last ten days</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- DIV TWO -->
+      <div class="div2 divs">
+        <div class="content-wrapper">
+          <div class="h1-div">
+            <h1 class="orange">Total Received</h1>
+          </div>
+
+          <div class="price-con">
+            <h2>20</h2>
+            <h2>25000</h2>
+          </div>
+
+          <div class="text-con">
+            <p>last five days</p>
+            <p>revenue</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- DIV THREE -->
+      <div class="div3 divs">
+        <div class="content-wrapper">
+          <div class="h1-div">
+            <h1 class="purple">Total Returned</h1>
+          </div>
+
+          <div class="price-con">
+            <h2>5</h2>
+            <h2>2500</h2>
+          </div>
+
+          <div class="text-con">
+            <p>last seven days</p>
+            <p>cost</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- DIV FOUR -->
+      <div class="divs div4">
+        <div class="content-wrapper">
+          <div class="h1-div">
+            <h1 class="pink">On The Way</h1>
+          </div>
+          <div class="price-con">
+            <h2>12</h2>
+            <h2>27000</h2>
+          </div>
+          <div class="text-con">
+            <p>ordered</p>
+            <p>Cost</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ============ BEGGINNING OF TABLE SECTION ============ -->
+   <div class="table">
+
+      <div class="table-header">
+
+        <h1>Products</h1>
+        <div class="btn-con">
+          <button class="btn-blue">Add product</button>
+          
+          <button>
+            <span><i class="ri-filter-3-line"></i></span> Filters
+          </button>
+
+          <button>Download All</button>
+        </div>
+      </div>
+      <!-- END OF TABLE HEADER DIV -->
+
+      <table class="table-data">
+        <thead>
+          <tr>
+            <th>Products</th>
+            <th>Order Value</th>
+            <th>Quantity</th>
+            <th>Order Id</th>
+            <th>Expected Delievery</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tbody>
+        @for (item of products; track item) {
+          <tr>
+            <td data-label="Product name">{{ item.name }}</td>
+            <td data-label="Order Value">₦{{ item.orderValue }}</td>
+            <td data-label="Quantity">{{ item.quantity }}</td>
+            <td data-label="orderId">{{ item.orderId }}</td>
+            <td data-label="Expected Delievery">{{ item.expectedDelivery }}</td>
+            <td data-label="Status" class="status" [ngClass]="
+            item.status === 'Delayed' ? 'orange' 
+            : item.status === 'Confirmed' ? 'blue' 
+            : item.status === 'Out for delivery' ? 'green' 
+            : 'black'
+            ">{{ item.status }}</td>
+          </tr>
+        }
+      </tbody>
+      </table>
+
+    </div>
+    <app-nav-buttons [page]="page()"/>
+
+</main>
+
+
