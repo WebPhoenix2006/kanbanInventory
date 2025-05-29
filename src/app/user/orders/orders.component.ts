@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 
 @Component({
   selector: 'app-orders',
@@ -7,11 +7,11 @@ import { Component } from '@angular/core';
   standalone: false
 })
 export class OrdersComponent {
-   generateOrderId() 
-   {
-  return Math.floor(1000 + Math.random() * 9000); // 4-digit random number
-}
+   generateOrderId() {
+    return Math.floor(1000 + Math.random() * 9000); // 4-digit random number  
+  }
 
+  page = signal<string>('3 of 10');
 
  statuses = ['Delayed', 'Confirmed', 'Returned', 'Out for delivery'];
 
