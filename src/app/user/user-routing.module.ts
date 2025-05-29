@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { LayoutComponent } from './layout/layout.component';
 import { authGuard } from '../auth/auth.guard';
-import { InvertoryComponent } from './invertory/invertory.component';
+import { InventoryComponent } from './invertory/invertory.component';
 
 const routes: Routes = [
   {
@@ -11,7 +11,7 @@ const routes: Routes = [
     component: LayoutComponent, 
     children: [
       { path: 'dashboard', component: DashboardComponent, canActivate: [authGuard] },
-      { path: 'inventory', component: InvertoryComponent}
+      { path: 'inventory', component: InventoryComponent}
     ],
   },
   { path: '', redirectTo: 'dashboard', pathMatch: 'full' },

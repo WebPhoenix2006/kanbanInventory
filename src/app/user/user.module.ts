@@ -6,16 +6,19 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { RouterModule } from '@angular/router';
 import { LayoutComponent } from './layout/layout.component';
 import { SharedModule } from '../shared/shared.module';
-import { InvertoryComponent } from './invertory/invertory.component';
+import { InventoryComponent } from './invertory/invertory.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
-  declarations: [LayoutComponent, DashboardComponent, InvertoryComponent, ],
+  declarations: [LayoutComponent, DashboardComponent, InventoryComponent ],
   imports: [
     CommonModule,
     UserRoutingModule, 
     RouterModule, 
-    SharedModule
+    SharedModule,
+    ReactiveFormsModule,
+    FormsModule
   ]
 })
 export class UserModule { }
