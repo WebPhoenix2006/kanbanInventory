@@ -57,3 +57,64 @@ main {
       }
     }
   }
+
+  //  BEGINNING OF MEDIA QUERIES
+
+  @media (max-width: 768px) {
+  .suppliers-container {
+    .heading {
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+
+      h1 {
+        font-size: 18px;
+      }
+
+      .btn-con {
+        flex-wrap: wrap;
+        gap: 10px;
+
+        button {
+          width: 100%;
+          padding: 8px 12px;
+        }
+      }
+    }
+
+    .content-container {
+      overflow-x: auto;
+
+      .table {
+        width: 800px; // Force horizontal scroll on small screens
+        min-width: 100%;
+      }
+    }
+  }
+
+  td {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .suppliers-container {
+    padding: 10px;
+
+    .heading {
+      h1 {
+        font-size: 16px;
+      }
+    }
+
+    .btn-con {
+      button {
+        font-size: 14px;
+      }
+    }
+  }
+
+  td {
+    font-size: 13px;
+  }
+}

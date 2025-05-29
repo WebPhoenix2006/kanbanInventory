@@ -1,6 +1,7 @@
 main {
   width: 100%;
   padding: 16px;
+  height: 100%;
 }
 
 .overall-inventory {
@@ -33,7 +34,8 @@ main {
       justify-content: flex-start;
 
       .content-wrapper {
-        width: 200px;
+        width: 100%;
+        max-width: 300px;
         height: 150px;
         padding: 20px 10px;
         text-align: center;
@@ -78,6 +80,9 @@ main {
     }
   }
 }
+
+
+
 .div4 {
   border-right: none;
 }
@@ -100,6 +105,17 @@ main {
 
 .table {
   width: 100%;
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+
+  td {
+    padding: 10px;
+  }
+
+
+
 
   &-header {
     width: 100%;
@@ -218,6 +234,136 @@ main {
       input {
         width: 273px;
       }
+    }
+  }
+}
+
+
+// BEGINNING OF MEDIA QUERIES
+
+@media (max-width: 768px) {
+  .overall-inventory {
+    width: 100%;
+
+    .title {
+      text-align: center;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+
+
+    .inventory-content {
+      display: grid;
+      width: 100%;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      gap: 25px;
+    }
+
+    .divs .content-wrapper {
+      width: 100%;
+      border-right: none;
+      border-bottom: 1px solid rgb(233, 233, 233);
+      padding: 5px;
+
+      h1 {
+        font-size: 12px;
+        text-align: center;
+      }
+
+      p {
+        font-size: 14px ;
+      }
+    }
+
+    .div4 {
+      border-bottom: none;
+    }
+  }
+}
+
+
+@media (max-width: 768px) {
+  .table {
+    margin-top: 7rem;
+    border-top: 1px solid rgb(186, 186, 186);
+    padding-block-start: 10px;
+  }
+
+  .table-header {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    text-align: center;
+
+    .btn-con {
+      flex-direction: column;
+      width: 100%;
+
+      button {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .overall-inventory .title {
+    font-size: 15px;
+    text-align: center;
+  }
+
+  .inventory-content .h1-div h1 {
+    font-size: 18px;
+  }
+
+  .table-header h1 {
+    font-size: 18px;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .table-data {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  .table-data table,
+  .table-data thead,
+  .table-data tbody,
+  .table-data th,
+  .table-data td,
+  .table-data tr {
+    display: block;
+  }
+
+  .table-data thead {
+    display: none; 
+  }
+
+  .table-data tr {
+    margin-bottom: 16px;
+    border-bottom: 1px solid #ccc;
+  }
+
+  .table-data td {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 12px;
+    text-align: left;
+    font-size: 14px;
+
+    &::before {
+      content: attr(data-label);
+      font-weight: bold;
+      flex-basis: 50%;
+      color: #333;
     }
   }
 }
