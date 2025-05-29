@@ -6,6 +6,9 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { RouterModule } from '@angular/router';
 import { LayoutComponent } from './layout/layout.component';
 import { SharedModule } from '../shared/shared.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
+
 import { InvertoryComponent } from './invertory/invertory.component';
 import { SuppliersComponent } from './suppliers/suppliers.component';
 import { OrdersComponent } from './orders/orders.component';
@@ -17,6 +20,9 @@ import { OrdersComponent } from './orders/orders.component';
     UserRoutingModule, 
     RouterModule, 
     SharedModule,
+    ReactiveFormsModule,
+    FormsModule
+
   ]
 })
 export class UserModule { }
