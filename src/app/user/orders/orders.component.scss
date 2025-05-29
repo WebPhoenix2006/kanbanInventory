@@ -1,0 +1,321 @@
+main {
+  width: 100%;
+  padding: 16px;
+  height: 100%;
+}
+
+.overall-inventory {
+  width: 100%;
+  display: flex;
+  background: white;
+  height: 300px;
+  flex-direction: column;
+  align-items: center;
+
+  .title {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-weight: 700;
+    font-size: 17px;
+  }
+
+  .inventory-content {
+    width: 100%;
+    display: flex;
+    border-top: 1px solid #dad6d6;
+    justify-content: space-between;
+    margin-top: 10px;
+
+    .divs {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+
+      .content-wrapper {
+        width: 100%;
+        max-width: 300px;
+        height: 150px;
+        padding: 20px 10px;
+        text-align: center;
+        border-right: 1px solid rgb(233, 233, 233);
+      }
+
+      .h1-div {
+        width: 100%;
+        text-align: left;
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+
+        h1 {
+          opacity: 0.8;
+          font-size: 25px;
+        }
+      }
+
+      p {
+        color: #919191;
+      }
+
+      .price-con {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        height: 10px;
+
+        h2 {
+          font-size: 20px;
+        }
+      }
+    }
+    .text-con {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      height: 10px;
+      margin-top: 2rem;
+    }
+  }
+}
+
+// THIS IS THE COLORING FOR THE OVERALL CONTAINER H1 (S);
+
+.div4 {
+  border-right: none;
+}
+
+.blue {
+  color: rgb(75, 112, 214);
+}
+
+.orange {
+  color: orange;
+}
+
+.purple {
+  color: rgb(203, 52, 203);
+}
+
+.pink {
+  color: red;
+}
+
+.green {
+  color: green;
+}
+
+.black {
+  font-weight: 400;
+  color: rgb(54, 54, 54);
+}
+
+.table {
+  width: 100%;
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+
+  td {
+    padding: 10px;
+  }
+
+
+
+
+  &-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 16px;
+
+    h1 {
+      font-size: 20px;
+      font-weight: 700;
+      color: black;
+    }
+
+    .btn-con {
+      display: flex;
+      gap: 15px;
+
+      button {
+        border: 1px solid rgb(181, 181, 181);
+        outline: none;
+        background: transparent;
+        border-radius: 6px;
+        padding: 5px 10px;
+        cursor: pointer;
+        transition: 0.4s ease-in-out;
+
+        &:hover {
+          transform: scale(1.02);
+          box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+      }
+
+      .btn-blue {
+        color: white;
+        background: rgb(61, 61, 211);
+        border: none;
+        font-weight: 500;
+      }
+    }
+  }
+
+  .table-grid {
+    display: flex;
+    justify-content: space-between;
+
+    .column {
+      flex: 1;
+      padding: 10px;
+
+      .header {
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+
+      div {
+        margin-bottom: 6px;
+      }
+    }
+  }
+
+}
+
+.status {
+  font-weight: 500;
+}
+
+// BEGGINNING OF MEDIA QUERIES
+
+@media (max-width: 768px) {
+  .overall-inventory {
+    width: 100%;
+
+    .title {
+      text-align: center;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+
+
+    .inventory-content {
+      display: grid;
+      width: 100%;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      gap: 25px;
+    }
+
+    .divs .content-wrapper {
+      width: 100%;
+      border-right: none;
+      border-bottom: 1px solid rgb(233, 233, 233);
+      padding: 5px;
+
+      h1 {
+        font-size: 12px;
+        text-align: center;
+      }
+
+      p {
+        font-size: 14px ;
+      }
+    }
+
+    .div4 {
+      border-bottom: none;
+    }
+  }
+}
+
+
+@media (max-width: 768px) {
+  .table {
+    margin-top: 7rem;
+    border-top: 1px solid rgb(186, 186, 186);
+    padding-block-start: 10px;
+  }
+
+  .table-header {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    text-align: center;
+
+    .btn-con {
+      flex-direction: column;
+      width: 100%;
+
+      button {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .overall-inventory .title {
+    font-size: 15px;
+    text-align: center;
+  }
+
+  .inventory-content .h1-div h1 {
+    font-size: 18px;
+  }
+
+  .table-header h1 {
+    font-size: 18px;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .table-data {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  .table-data table,
+  .table-data thead,
+  .table-data tbody,
+  .table-data th,
+  .table-data td,
+  .table-data tr {
+    display: block;
+  }
+
+  .table-data thead {
+    display: none; 
+  }
+
+  .table-data tr {
+    margin-bottom: 16px;
+    border-bottom: 1px solid #ccc;
+  }
+
+  .table-data td {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 12px;
+    text-align: left;
+    font-size: 14px;
+
+    &::before {
+      content: attr(data-label);
+      font-weight: bold;
+      flex-basis: 50%;
+      color: #333;
+    }
+  }
+}

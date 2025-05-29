@@ -5,6 +5,7 @@ import { LayoutComponent } from './layout/layout.component';
 import { authGuard } from '../auth/auth.guard';
 import { InvertoryComponent } from './invertory/invertory.component';
 import { SuppliersComponent } from './suppliers/suppliers.component';
+import { OrdersComponent } from './orders/orders.component';
 
 const routes: Routes = [
   {
@@ -13,7 +14,8 @@ const routes: Routes = [
     children: [
       { path: 'dashboard', component: DashboardComponent, canActivate: [authGuard] },
       { path: 'inventory', component: InvertoryComponent},
-      { path: 'suppliers', component: SuppliersComponent}
+      { path: 'suppliers', component: SuppliersComponent},
+      { path: 'orders', component: OrdersComponent},
     ],
   },
   { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
