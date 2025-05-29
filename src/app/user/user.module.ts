@@ -9,12 +9,12 @@ import { SharedModule } from '../shared/shared.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
-import { InvertoryComponent } from './invertory/invertory.component';
+import { InventoryComponent } from './invertory/invertory.component';
 import { SuppliersComponent } from './suppliers/suppliers.component';
 import { OrdersComponent } from './orders/orders.component';
 
 @NgModule({
-  declarations: [LayoutComponent, DashboardComponent, InvertoryComponent, SuppliersComponent, OrdersComponent],
+  declarations: [LayoutComponent, DashboardComponent, InventoryComponent, SuppliersComponent, OrdersComponent],
   imports: [
     CommonModule,
     UserRoutingModule, 
