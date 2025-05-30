@@ -1,5 +1,6 @@
 main {
-  padding: 20px;
+  padding: 16px;
+  background-color: #f7f7f7;
 }
 
 .red {
@@ -16,6 +17,9 @@ main {
 
   .suppliers-container {
     width: 100%;
+    background: white;
+    border-radius: 8px;
+    padding: 28px 16px;
 
     .heading {
       width: 100%;
@@ -92,12 +96,14 @@ main {
       }
 
       .btn-con {
-        flex-wrap: wrap;
-        gap: 10px;
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
 
         button {
-          width: 100%;
-          padding: 8px 12px;
+          width: 60%;
+          justify-content: center;
         }
       }
     }
