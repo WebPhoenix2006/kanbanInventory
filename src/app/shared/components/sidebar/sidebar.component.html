@@ -5,35 +5,35 @@
     <div class="sidebar">
       <div class="sidebar-nav">
         <ul class="nav mb-5 flex-column">
-          <li class="link">
+          <li class="link" routerLink="/user/dashboard" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
             <span> <svg-icons name="home"></svg-icons> </span>
-            <a routerLink="/user/dashboard">Dashboard</a>
+            <a>Dashboard</a>
           </li>
-          <li class="link active">
+          <li class="link"  routerLink="/user/inventory" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
             <span> <svg-icons name="handcart"></svg-icons> </span>
-            <a routerLink="/user/inventory">Inventory</a>
+            <a>Inventory</a>
           </li>
           <li class="link">
             <span> <svg-icons name="stats"></svg-icons> </span>
-            <a routerLink="/user/dashboard">Reports</a>
+            <a>Reports</a>
           </li>
-          <li class="link active">
+          <li class="link" routerLink="/user/suppliers" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
             <span> <svg-icons name="profile"></svg-icons> </span>
-            <a routerLink="/user/suppliers">Suppliers</a>
+            <a>Suppliers</a>
           </li>
-          <li class="link active">
+          <li class="link" routerLink="/user/orders" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
             <span> <svg-icons name="box"></svg-icons> </span>
-            <a routerLink="/user/orders">Orders</a>
+            <a>Orders</a>
           </li>
           <li class="link">
             <span> <svg-icons name="notes"></svg-icons> </span>
-            <a routerLink="/user/dashboard">Manage Store</a>
+            <a>Manage Store</a>
           </li>
         </ul>
         <ul class="nav flex-column">
           <li class="link">
             <span> <svg-icons name="cog"></svg-icons> </span>
-            <a routerLink="/">Settings</a>
+            <a>Settings</a>
           </li>
           <li class="link" >
             <span> <svg-icons name="exit"></svg-icons> </span>
