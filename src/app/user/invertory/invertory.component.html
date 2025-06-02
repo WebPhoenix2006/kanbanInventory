@@ -61,7 +61,7 @@
   <!-- ====== END OF OVERALL INVENTORY ======== -->
 
   <!-- =========== BEGINNING OF TABLE COMPONENT ============= -->
-  <div class="table shadow-sm ">
+  <div class="table shadow-sm">
     <div class="table-header">
       <h1>Products</h1>
       <div class="btn-con">
@@ -108,7 +108,9 @@
         </tr>
       </tbody>
     </table>
-    <app-nav-buttons [page]="page()" />
+    <div class="nav-buttons">
+      <app-nav-buttons [page]="page()" />
+    </div>
   </div>
 </main>
 
