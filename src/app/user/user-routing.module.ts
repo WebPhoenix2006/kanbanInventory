@@ -6,17 +6,22 @@ import { authGuard } from '../auth/auth.guard';
 import { InventoryComponent } from './invertory/invertory.component';
 import { SuppliersComponent } from './suppliers/suppliers.component';
 import { OrdersComponent } from './orders/orders.component';
+import { ProductDetailsComponent } from './product-details/product-details.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: LayoutComponent, 
+    component: LayoutComponent,
     children: [
-      { path: 'dashboard', component: DashboardComponent, canActivate: [authGuard] },
-
-      { path: 'inventory', component: InventoryComponent},
-      { path: 'suppliers', component: SuppliersComponent},
-      { path: 'orders', component: OrdersComponent},
+      {
+        path: 'dashboard',
+        component: DashboardComponent,
+        canActivate: [authGuard],
+      },
+      { path: 'inventory', component: InventoryComponent },
+      { path: 'inventory/:id', component: ProductDetailsComponent },
+      { path: 'suppliers', component: SuppliersComponent },
+      { path: 'orders', component: OrdersComponent },
     ],
   },
   { path: '', redirectTo: 'dashboard', pathMatch: 'full' },

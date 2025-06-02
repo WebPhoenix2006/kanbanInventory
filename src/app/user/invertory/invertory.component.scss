@@ -107,8 +107,11 @@ main {
   padding: 28px 16px;
   border-radius: 8px;
 
-  td {
+  tr{
+    cursor: pointer;
+    td {
     padding: 10px;
+  }
   }
 
   &-header {
