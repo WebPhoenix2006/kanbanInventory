@@ -179,6 +179,31 @@ main {
   font-weight: 500;
 }
 
+.blue {
+  color: rgb(75, 112, 214);
+}
+
+.orange {
+  color: orange;
+}
+
+.purple {
+  color: rgb(203, 52, 203);
+}
+
+.pink {
+  color: red;
+}
+
+.green {
+  color: green;
+}
+
+.black {
+  font-weight: 400;
+  color: rgb(54, 54, 54);
+}
+
 // BEGGINNING OF MEDIA QUERIES
 
 @media (max-width: 768px) {
