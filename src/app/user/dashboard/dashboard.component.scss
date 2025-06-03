@@ -1,7 +1,6 @@
 .dashboard {
     padding: 22px 32px;
     background-color: #f4f4f4;
-    height: 100vh;
 
     .overview {
         padding: 20px 16px;
@@ -26,5 +25,35 @@
                 }
             }
         }
+    }
+}
+
+.chart {
+    background-color: #fff;
+    padding: 18px 16px;
+    border-radius: 8px;
+}
+.stock {
+    padding: 18px 16px;
+    border-radius: 8px;
+    background-color: #fff;
+    margin-top: 22px;
+    &.low-quantity {
+        .title {
+            margin-bottom: 13px;
+        }
+        // table {
+        //     tr {
+        //         td {
+        //             display: flex;
+
+        //             & > .status {
+        //                 display: flex;
+        //                 justify-self: center;
+        //                 height: 100%;
+        //             }
+        //         }
+        //     }
+        // }
     }
 }
