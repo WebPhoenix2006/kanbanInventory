@@ -7,5 +7,9 @@ import { Component } from '@angular/core';
   standalone: false
 })
 export class ProductDetailsComponent {
+  activeTab: string = 'overview';
 
+  setActiveTab(tab: string): void {
+    this.activeTab = tab;
+  }
 }
