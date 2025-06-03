@@ -1,3 +1,4 @@
+import { ProductDetailsComponent } from './product-details/product-details.component';
 import { NgModule } from '@angular/core';
 import { CommonModule, NgFor } from '@angular/common';
 
@@ -14,7 +15,7 @@ import { SuppliersComponent } from './suppliers/suppliers.component';
 import { OrdersComponent } from './orders/orders.component';
 
 @NgModule({
-  declarations: [LayoutComponent, DashboardComponent, InventoryComponent, SuppliersComponent, OrdersComponent],
+  declarations: [LayoutComponent, DashboardComponent, InventoryComponent, SuppliersComponent, OrdersComponent, ProductDetailsComponent],
   imports: [
     CommonModule,
     UserRoutingModule, 
