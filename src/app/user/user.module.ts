@@ -21,7 +21,7 @@ import { OrdersComponent } from './orders/orders.component';
     CommonModule,
     NgChartsModule,
     UserRoutingModule,
-    RouterModule,
+    RouterModule, 
     SharedModule,
     ReactiveFormsModule,
     FormsModule,
