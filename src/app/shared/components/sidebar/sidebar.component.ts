@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, input, output } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { ViewControllerService } from '../../services/view-controller.service';
 import { AuthService } from '../../services/auth.service';
@@ -11,6 +11,19 @@ import { Router } from '@angular/router';
   standalone: false,
 })
 export class SidebarComponent {
+
+  isSidebarCollapsed = input.required<boolean>();
+  collapseSidebar = output<boolean>();
+
+  closeSidebar():void {
+    this.collapseSidebar.emit(true);
+  } 
+
+  openSidebar(): void {
+    this.collapseSidebar.emit(false);
+  }
+
+
  scrlListner = new BehaviorSubject(0);
   constructor(private viewCS: ViewControllerService, private auth: AuthService, private router: Router) {}
 

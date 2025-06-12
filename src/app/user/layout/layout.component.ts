@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 
 @Component({
   selector: 'app-layout',
@@ -7,5 +7,10 @@ import { Component } from '@angular/core';
   standalone: false,
 })
 export class LayoutComponent {
-
+  isSidebarCollapsed = signal<boolean>(false);
+  
+  toggleCollapse (state: boolean): void {
+    this.isSidebarCollapsed.set(state);
+  }
+  
 }

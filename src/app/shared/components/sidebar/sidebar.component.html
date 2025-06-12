@@ -1,43 +1,70 @@
-  <div class="sidebar-par ">
-    <div class="logo shadow-bottom">
-      <img src="assets/images/logo-light.png" alt="logo" />
-    </div>
+  <div class="sidebar-par" [class.sidebar-par-collapsed]="isSidebarCollapsed()">
+<div class="logo shadow-bottom">
+  @if (isSidebarCollapsed()) {
+    <img src="assets/images/kanban_logosmall.png" alt="logo" (click)="openSidebar()" style="cursor: pointer;"/>
+  } @else {
+    <img src="assets/images/logo-light.png" alt="logo" (click)="openSidebar()" style="cursor: pointer;" />
+  }
+
+  @if (!isSidebarCollapsed()) {
+
+    <button class="toggle-btn" (click)="closeSidebar()" aria-label="Close sidebar">
+      &times;
+    </button> 
+  }
+</div>
     <div class="sidebar">
       <div class="sidebar-nav">
         <ul class="nav mb-5 flex-column">
           <li class="link" routerLink="/user/dashboard" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
             <span> <svg-icons name="home"></svg-icons> </span>
-            <a>Dashboard</a>
+            @if (!isSidebarCollapsed()) {
+              <a>Dashboard</a> 
+            }
           </li>
           <li class="link"  routerLink="/user/inventory" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
             <span> <svg-icons name="handcart"></svg-icons> </span>
-            <a>Inventory</a>
+            @if (!isSidebarCollapsed()) {
+              <a>Inventory</a>
+            }
           </li>
-          <li class="link">
+          <li class="link" routerLink="/user/reports" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
             <span> <svg-icons name="stats"></svg-icons> </span>
-            <a>Reports</a>
+            @if (!isSidebarCollapsed()) {
+              <a>Reports</a>
+            }
           </li>
           <li class="link" routerLink="/user/suppliers" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
             <span> <svg-icons name="profile"></svg-icons> </span>
-            <a>Suppliers</a>
+            @if (!isSidebarCollapsed()) {
+              <a>Suppliers</a>
+            }
           </li>
           <li class="link" routerLink="/user/orders" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
             <span> <svg-icons name="box"></svg-icons> </span>
-            <a>Orders</a>
+            @if (!isSidebarCollapsed()) {
+              <a>Orders</a>
+            }
           </li>
           <li class="link">
             <span> <svg-icons name="notes"></svg-icons> </span>
-            <a>Manage Store</a>
+            @if (!isSidebarCollapsed()) {
+              <a>Manage Store</a>
+            }
           </li>
         </ul>
         <ul class="nav flex-column">
           <li class="link">
             <span> <svg-icons name="cog"></svg-icons> </span>
-            <a>Settings</a>
+            @if (!isSidebarCollapsed()) {
+              <a>Settings</a>
+            }
           </li>
-          <li class="link" >
+          <li class="link" (click)="onLogout()" style="cursor: pointer;">
             <span> <svg-icons name="exit"></svg-icons> </span>
-            <a (click)="onLogout()" style="cursor: pointer;">Log out</a>
+            @if (!isSidebarCollapsed()) {
+              <a>Log out</a>
+            }
           </li>
         </ul>
       </div>
