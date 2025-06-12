@@ -1,5 +1,11 @@
 .main-content {
-  margin-left: 280px; /* same as sidebar width */
+  margin-left: 280px; 
   height: 100vh;
-  overflow-y: auto;
+  width: calc(100% - 280px);
+  transition: .3s ease-in-out;
+}
+
+.main-content-trimmed {
+  width: calc(100% - 5rem);
+  margin-left: 5rem;
 }
