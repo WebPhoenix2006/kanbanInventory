@@ -7,7 +7,7 @@ import { Product } from '../../user/interfaces/product';
   providedIn: 'root',
 })
 export class ProductService {
-  private baseUrl = 'http://127.0.0.1:8000/api/inventory/products/';
+  private baseUrl = 'https://kanbanbackend.fly.dev/api/inventory/products/';
 
   constructor(private http: HttpClient) {}
 

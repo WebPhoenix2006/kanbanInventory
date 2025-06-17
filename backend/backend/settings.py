@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-u$&fym)@+f(iy5gr1#5um4f=uw0#sy+95i!50xihua6dedp@7x
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['kanbanbackend.fly.dev', '127.0.0.1', 'localhost']
 
 
 # Application definition
